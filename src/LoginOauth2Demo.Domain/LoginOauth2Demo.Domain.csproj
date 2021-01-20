@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>LoginOauth2Demo</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="4.1.2" />
+    <ProjectReference Include="..\LoginOauth2Demo.Domain.Shared\LoginOauth2Demo.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
