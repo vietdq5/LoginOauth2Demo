@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LoginOauth2Demo.Entities;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -10,8 +11,9 @@ namespace LoginOauth2Demo.EntityFrameworkCore
         /* Add DbSet for each Aggregate Root here. Example:
          * public DbSet<Question> Questions { get; set; }
          */
+        public DbSet<Book> Books { get; set; }
 
-        public LoginOauth2DemoDbContext(DbContextOptions<LoginOauth2DemoDbContext> options) 
+        public LoginOauth2DemoDbContext(DbContextOptions<LoginOauth2DemoDbContext> options)
             : base(options)
         {
 

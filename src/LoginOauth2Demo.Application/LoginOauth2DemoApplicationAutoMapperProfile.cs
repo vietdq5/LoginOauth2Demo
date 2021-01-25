@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using LoginOauth2Demo.Entities;
+using LoginOauth2Demo.Entities.Dtos;
 
 namespace LoginOauth2Demo
 {
@@ -6,9 +8,8 @@ namespace LoginOauth2Demo
     {
         public LoginOauth2DemoApplicationAutoMapperProfile()
         {
-            /* You can configure your AutoMapper mapping configuration here.
-             * Alternatively, you can split your mapping configurations
-             * into multiple profile classes for a better organization. */
+            CreateMap<Book, BookDto>();
+            CreateMap<CreateUpdateBookDto, Book>(MemberList.Source);
         }
     }
 }

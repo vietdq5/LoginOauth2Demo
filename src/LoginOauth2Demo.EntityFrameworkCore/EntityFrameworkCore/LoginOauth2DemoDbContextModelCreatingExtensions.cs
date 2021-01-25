@@ -1,6 +1,9 @@
 ﻿using System;
+using LoginOauth2Demo.Const;
+using LoginOauth2Demo.Entities;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace LoginOauth2Demo.EntityFrameworkCore
 {
@@ -19,25 +22,11 @@ namespace LoginOauth2Demo.EntityFrameworkCore
 
             optionsAction?.Invoke(options);
 
-            /* Configure all entities here. Example:
-
-            builder.Entity<Question>(b =>
+            builder.Entity<Book>(b =>
             {
-                //Configure table & schema name
-                b.ToTable(options.TablePrefix + "Questions", options.Schema);
-            
+                b.ToTable(ConfigDb.DbTablePrefix + "Books", ConfigDb.DbSchema);
                 b.ConfigureByConvention();
-            
-                //Properties
-                b.Property(q => q.Title).IsRequired().HasMaxLength(QuestionConsts.MaxTitleLength);
-                
-                //Relations
-                b.HasMany(question => question.Tags).WithOne().HasForeignKey(qt => qt.QuestionId);
-
-                //Indexes
-                b.HasIndex(q => q.CreationTime);
             });
-            */
         }
     }
 }
